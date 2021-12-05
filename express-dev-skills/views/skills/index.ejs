@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Skills</title>
+</head>
+<nav>
+    <div><a href="/">HOME</a></div>
+    <div>SKILLS</div>
+    <div>ABOUT</div>
+    <div>LOG OUT</div>
+  </nav>
+<body>
+    <h1>Skills</h1>
+    <ul>
+        <% skills.forEach(function(s) { %>
+            <li>
+                <a href="/skills/<%= s.id %>"><%= s.id %></a>
+                -
+                <%= s.computerLanguage %>
+                -
+                <%= s.skillLevel %>
+            </li>
+            <% }); %>
+    </ul>
+    
+</body>
+</html>

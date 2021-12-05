@@ -1,26 +1,31 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express'); // Loaded express framework
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const skillsDB = require('./models/skills');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+// First require file then... 
+const indexRouter = require('./routes/index');
+const skillsRouter = require('./routes/skills');
 
-var app = express();
+//Create an application that runs express to use for our routing 
+const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
+// Middleware pipeline
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// ...Second mount the router object 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/skills', skillsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,3 +44,16 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+// Implement index functionality for the skills resource
+// 4. Using the router object within routes/cats.js and assuming a cats controller assigned to a variable named catsCtrl:
+// Write the line of code that defines the proper route that would read/display all cats (cats index route).
+// 4. router.get('/', catsCtrl.index);
+
+// Implement show functionality for the skills resource
+// 5. Write the line of code that defines the proper route that would read/display a single cat (cats show route).
+// 5. router.get('/:id', catsCtrl.show)
+
+// Identify the proper route
+// Update the UI
+

@@ -1,8 +1,35 @@
+* {
+  /* height & width now includes border & padding */
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
+  font-family: Helvetica;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: #f3dba8;
+}
+
+nav {
+  display: flex;
+  flex-direction: row; /* default */
+  justify-content: flex-start; /* default */
+  align-items: center; /* center vertically (cross-axis) */
+  height: 50px;
+  background-color: #a2cbb6;
+  font-size: 20px;
+  margin: 10px;
+  color: #f3dba8;
+}
+
+div {
+  padding: 5px;
+}
+
+nav > div:last-child {
+  margin-left: auto;
 }
