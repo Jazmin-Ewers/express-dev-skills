@@ -3,7 +3,7 @@ const express = require('express'); // Loaded express framework
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const skillsDB = require('./models/skills');
+const skillsDB = require('./models/skill');
 
 // First require file then... 
 const indexRouter = require('./routes/index');
@@ -45,15 +45,14 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-// Implement index functionality for the skills resource
-// 4. Using the router object within routes/cats.js and assuming a cats controller assigned to a variable named catsCtrl:
-// Write the line of code that defines the proper route that would read/display all cats (cats index route).
-// 4. router.get('/', catsCtrl.index);
 
-// Implement show functionality for the skills resource
-// 5. Write the line of code that defines the proper route that would read/display a single cat (cats show route).
-// 5. router.get('/:id', catsCtrl.show)
 
-// Identify the proper route
-// Update the UI
+// (1) Identify the proper route
+// GET - /post/:id - Read a specific post - Typical Controller Action: show
+// (2) Update UI for Show Route 
+// (3.1) Define "/skills/:id route" in routes
+// (3.2) Set up the callback function in controller
+// (3.3) Export callback function
+
+
 

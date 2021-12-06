@@ -9,24 +9,12 @@
 </head>
 <nav>
     <div><a href="/">HOME</a></div>
-    <div>SKILLS</div>
+    <div><a href="/skills">SKILLS</a></div>
     <div>ABOUT</div>
     <div>LOG OUT</div>
   </nav>
 <body>
-    <h1>Skills</h1>
-    <ul>
-        <% skills.forEach(function(s) { %>
-            <li>
-                <!-- // (2) Update UI for Show Route -->
-                <a href="/skills/<%= s.id %>"><%= s.id %></a> 
-                -
-                <%= s.computerLanguage %>
-                -
-                <%= s.skillLevel %>
-            </li>
-            <% }); %>
-    </ul>
-    
+    <h3><%= skill.computerLanguage %></h3>
+    <h3><%= skill.skillLevel %></h3>  
 </body>
 </html>
