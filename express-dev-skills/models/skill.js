@@ -6,19 +6,23 @@ const skills = [
     {id: 304, computerLanguage: "java", skillLevel: "intermediate"}
 ];
 
-
 module.exports = {
     getAll,
-    getOne  // (3.5) Export function that return one id
+    getOne,
+    create 
 };
 
 function getAll() {
     return skills;
 }
 
-// (3.4) Add another function that return one id
 function getOne(id) {
     id = parseInt(id);
-    console.log(id, typeof(id))
-    return skills.find(skill => skill.id === id)
+    return skills.find((skill) => skill.id == id);
+}
+
+function create(skillObj) {
+    skillObj.id = Math.floor(Math.random() * 400);
+    skillObj.skillLevel = "beginner";
+    skills.push(skillObj);
 }

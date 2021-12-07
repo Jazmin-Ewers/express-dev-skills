@@ -7,12 +7,17 @@ const skillsCtrl = require('../controllers/skills');
 
 // All actual paths start with "/skills"
 
+// GET "/skills" - Index Route
+router.get('/', skillsCtrl.index);
 
-// Implement index functionality for the skills resource
-router.get("/", skillsCtrl.index);
+// POST "/skills" - Create Route
+router.post('/', skillsCtrl.create);
 
-// Implement show functionality for the skills resource
-// (3.1) Define "/skills/:id route"
-router.get("/:id",  );
+// GET "skills/new" - New Route
+router.get('/new', skillsCtrl.new);
+
+// GET "/skills/:id" - Show Route
+router.get('/:id', skillsCtrl.show);
+
 
 module.exports = router;

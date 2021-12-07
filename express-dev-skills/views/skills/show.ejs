@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Skills</title>
-</head>
-<nav>
-    <div><a href="/">HOME</a></div>
-    <div><a href="/skills">SKILLS</a></div>
-    <div>ABOUT</div>
-    <div>LOG OUT</div>
-  </nav>
-<body>
+<%- include('../partials/header') %>
+
+    <h3>Skills Details - #<%= skill.id %></h3>
     <h3><%= skill.computerLanguage %></h3>
     <h3><%= skill.skillLevel %></h3>  
-</body>
-</html>
+
+<%- include('../partials/footer') %>

@@ -1,24 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Skills</title>
-</head>
-<nav>
-    <div><a href="/">HOME</a></div>
-    <div>SKILLS</div>
-    <div>ABOUT</div>
-    <div>LOG OUT</div>
-  </nav>
-<body>
+<%- include('../partials/header') %>
+
     <h1>Skills</h1>
     <ul>
         <% skills.forEach(function(s) { %>
             <li>
-                <!-- // (2) Update UI for Show Route -->
                 <a href="/skills/<%= s.id %>"><%= s.id %></a> 
                 -
                 <%= s.computerLanguage %>
@@ -28,5 +13,4 @@
             <% }); %>
     </ul>
     
-</body>
-</html>
+<%- include('../partials/footer') %>
