@@ -19,5 +19,8 @@ router.get('/new', skillsCtrl.new);
 // GET "/skills/:id" - Show Route
 router.get('/:id', skillsCtrl.show);
 
+// DELETE "/skills/:id" - Delete Route
+router.delete('/:id', skillsCtrl.delete);
+
 
 module.exports = router;

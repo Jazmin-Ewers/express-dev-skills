@@ -9,7 +9,8 @@ const skills = [
 module.exports = {
     getAll,
     getOne,
-    create 
+    create, 
+    deleteSkill
 };
 
 function getAll() {
@@ -25,4 +26,9 @@ function create(skillObj) {
     skillObj.id = Math.floor(Math.random() * 400);
     skillObj.skillLevel = "beginner";
     skills.push(skillObj);
+}
+
+function deleteSkill(id) {
+    const skillIdx = skills.findIndex(skill => skill.id == id); 
+    skills.splice(skillIdx, 1);
 }

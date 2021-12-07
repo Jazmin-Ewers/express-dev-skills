@@ -5,7 +5,8 @@ module.exports = {
     index,  // shorthand for index:index; In routes we called this file index and inside this file we have a funtion named index
     show, // (3.4) Export callback function
     new : newSkill,
-    create
+    create,
+    delete : deleteSkill
 }
 
 function index(req, res) {
@@ -26,4 +27,12 @@ function create(req, res) {
     Skill.create(req.body);
     console.log(req.body);
     res.redirect('skills/');
+}
+
+function deleteSkill(req, res) {
+    console.log(req.params);
+    let skill = Skill.getOne(req.params.id);
+    Skill.deleteSkill(req.params.id)
+    res.redirect('/skills/');
+    
 }

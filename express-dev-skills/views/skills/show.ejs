@@ -4,4 +4,8 @@
     <h3><%= skill.computerLanguage %></h3>
     <h3><%= skill.skillLevel %></h3>  
 
+      <form action="/skills/<%= skill.id %>?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-danger">Delete Skill</button>
+      </form>
+
 <%- include('../partials/footer') %>

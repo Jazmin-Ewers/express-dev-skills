@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const skillsDB = require('./models/skill');
+var methodOverride = require('method-override');
 
 // First require file then... 
 const indexRouter = require('./routes/index');
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 // ...Second mount the router object 
 app.use('/', indexRouter);
@@ -68,4 +70,10 @@ module.exports = app;
 // 4) Create function in model that creates a new dict in list
 // 5) Set up the Create callback function in controller and Export callback function and redirect to index page
 
+// On the show view, display a Delete Skill button (the submit button within a <form>) that when clicked, deletes the skill from the "database" and redirects to the index view.
+// 1) DELETE /skills/:id route
+// 2) update UI on the show view
+// 3) Define  "/skills/:id" route in routes
+// 4) Create function in model that deletes a dict in list
+// 5) Set up the Delete callback function in controller and Export callback function and redirect to index page
 
